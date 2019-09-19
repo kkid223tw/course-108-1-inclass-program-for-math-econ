@@ -248,5 +248,9 @@ list(listA[index] for index in [0,2,7])
 ```{python}
 [listA[index] for index in [1,8,3,4]]
 ```
-
+#取第1個第7個第8個
+```{python}
+listB=[2,5,-1,31,-22,3,17,25]
+list(listB[index] for index in [0,6,7])
+```
 
