@@ -116,4 +116,25 @@ name
 grade
 type(grade)
 ```
+```{python}
+gradeTuple2=("A",88,72,58,"man")
+name,*grade,gender=gradeTuple2
+```
+
+```{python}
+name
+grade
+gender
+```
+
+
+```{python}
+setD={1,"a",(1,4)}
+type(setD)
+print(setD)
+setE={True,False}
+print(setE)
+setF={1,"b",[1,4]}
+```
+#[1,4]是unhashable type
 
