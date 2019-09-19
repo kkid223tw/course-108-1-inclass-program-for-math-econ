@@ -3,32 +3,117 @@ title: "課堂練習"
 date: "9/12/2019"
 output: html_document
 ---
-```{python}
-
-```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 library(reticulate)
-use_python("C:\Users\kaiwun\AppData\Local\Temp\RtmpCuFy1a\downloaded_packages",
+use_python("C:/Users/kaiwun/ANACON~1/envs/myEnvironment",
            required = T)
 use_condaenv("myEnvironment", required = T)
 ```
+```{r}
+conda_install("myEnvironment", 
+              c("numpy","pandas"))
+```
+```{r}
+conda_install("m-team", 
+              c("google-api-python-client"),
+              pip=TRUE) 
+```
+
 
 ```{python}
 a=5
-type(a) # check class type創a這個值是int類型整數的意思
+type(a) 
+```
+# check class type創a這個值是int類型整數的意思
+
+```{python}
+range 
+```
+#要按fn+f1可以直接查help
+```{r}
+# conda安裝方式
+conda_install("myEnvironment",
+              c("numpy","pandas")) 
 ```
 
 ```{python}
-range 要按fn+f1可以直接查help
+string = "Hello"
+string2 = 'I am fine' 
+type(string)
+numInteger = 3
+type(numInteger)
+numFloat = 3.
+type(numFloat)
 ```
-```{r}
-# conda安裝方式
-conda_install("myEnvironment", # 沙盒環境名稱
-              c("numpy","pandas")) # 要安裝的modules
+# 用單引號也可以#len(numInteger)#len(numFloat)
+```{python}
+logiT=True
+type(logiT)
+logiF=False
+type(logiF)
+```
+```{python}
+logiT+logiT+logiF
+```
+```{python}
+(2,3,(4,5)) # hashable
+(2,3,[4,5]) # not hashable
+```
+```{python}
+list1=[1,3,5]
+list2=[1,"b",True,(1,True,["A"])]
+len(list1)
+len(list2)
+```
+#len用來查有幾個元素
+```{python}
+list3=[(1,True,[1,True]),(2,True),{2,3,4},(1,2,(3,4))]
+len(list3)
+```
+```{python}
+listA=[1,2,True]
+listA
+type(listA)
+listB=[1,["a","b"],True] # nested list
+listB
+type(listB)
+
 ```
 
+```{python}
+listA
+a,b,c=listA # unpacking to three objects
+type(a); type(b); type(c) # 
 
+tupleD=(a,b,c) # packing to a tuple
+type(tupleD)
+
+listD= [a,b,c] # packing to a list
+type(listD)
+```
+
+```{python}
+print(listA)
+
+a,*b = listA
+a; type(a)
+b; type(b)
+
+*a, b = listA
+a; type(a)
+b; type(b)
+```
+```{python}
+gradeTuple=("A",88,72)
+name,*grade=gradeTuple
+```
+
+```{python}
+name
+grade
+type(grade)
+```
 
