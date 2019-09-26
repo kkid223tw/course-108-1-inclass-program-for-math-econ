@@ -1,0 +1,344 @@
+---
+title: "課堂練習"
+date: "9/12/2019"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+use_python("C:/Users/kaiwun/ANACON~1/envs/myEnvironment",
+           required = T)
+use_condaenv("myEnvironment", required = T)
+```
+
+```{r}
+library(reticulate)
+
+```
+
+```{r}
+library(reticulate)
+conda_create("myEnvironment")
+```
+```{python}
+tupleA=(2,7,5)
+tupleA[0]
+tupleA[0]=3 
+```
+# tuple無法改內容
+```{python}
+dictionaryA ={"name": "Mary", "id": "A28374", "grade": 77}
+dictionaryA
+```
+```{python}
+setA={1:"a",2:"c",3:2,4:3,5:7}
+setA
+```
+```{python}
+setB={
+"1":"a",
+"2":"c",
+"3":2,
+"4":3,
+"5":7
+}
+```
+
+```{python}
+sparseMatrix = {
+(0, 0): 3, 
+(0, 2): -2, 
+(0, 3): 11,
+(1, 1): 9, 
+(2, 1): 7, 
+(3, 3): -5}
+print(sparseMatrix)
+```
+```{python}
+listA=[2,3,4,7,6]
+listA[2]=-1
+listA
+```
+```{python}
+grade ={
+"number": [172,214,322,425,517],
+"name": ["A","B","C","D","E"],
+"gradescore":[80,60,90,70,50]
+}
+grade
+```
+```{python}
+grade["gradescore"]
+```
+
+取出小明及80
+```{python}
+grade["name"][0]
+grade["gradescore"][0]
+{grade["name"][0]: grade["grades"][0]}
+```
+
+```{python}
+{
+grade['name'][i]: grade["gradescore"][i] for i in [0, 1, 2, 3, 4]
+}
+```
+```{python}
+matrixA=[
+[2,3,1],
+[1,0,5]
+]
+```
+
+```{python}
+sparseMatrix = {
+(0, 0): 3, 
+(0, 2): -2, 
+(0, 3): 11,
+(1, 1): 9, 
+(2, 1): 7, 
+(3, 3): -5}
+print(sparseMatrix)
+```
+
+```{python}
+sparseMatrix[(3,3)]
+```
+```{python}
+originalList=[1,2,"a"]
+definitionCopy=originalList 
+sliceCopy=originalList[:]
+sliceCopy2=originalList.copy()
+sliceCopy
+sliceCopy2
+```
+originalList=[1,2,"a"]
+definitionCopy=originalList # 定義式複製
+sliceCopy=originalList[:] # slice複製
+sliceCopy2=originalList.copy()
+sliceCopy
+sliceCopy2
+```{python}
+print(definitionCopy)
+print(originalList)
+
+definitionCopy[1]="b"
+print(definitionCopy)
+print(originalList)
+
+originalList[1]=2
+print(definitionCopy)
+print(originalList)
+```
+第一個是更動小孩的
+definitionCopy和originalList的值會一模一樣
+```{python}
+treeA=[1,2,3,[4,5],[6,7]]
+```
+```{python}
+treeA=[1,2,3,[4,5],[6,7]]
+
+treeA[1]="b"
+treeA
+treeACopy=treeA.copy()
+treeACopy
+```
+
+記憶體存treeA2的方法
+
+有一快記憶體address0:[1,2,3,adress1,adress2]
+address1:指向某記憶體位置其內容為[4,5]
+address2:指向某記憶體位置其內容為[6,7]
+
+treeACopy
+有一快記憶體adress3:[1,2,3,adress1,adress2]
+```{python}
+originalList=[1,2,10]
+listA=originalList+[5,7] # concatenate
+listB=originalList*2 # duplicate
+
+print(originalList)
+print(listA)
+print(listB)
+
+originalList[0]=0
+print(originalList)
+print(listA)
+print(listB)
+```
+
+```{python}
+listA=[2,3,"b"]
+listA+[5]
+listA
+listA.append(5)
+listA
+```
+
+```{python}
+numList=[3,2,11,43]
+
+numList[0]+3
+numList[1]+3
+numList[2]+3
+numList[3]+3
+```
+
+```{python}
+[numList[i]+3 for i in [0,1,2,3]]
+```
+
+```{python}
+numList[i]>10 for 
+[numList[i]+3 for i in [0,1,2,3]]
+```
+
+```{python}
+a="Hello, How are you"
+len(a) 
+b=["Hello"]
+len(b) 
+```
+```{python}
+a[0]
+a[:5]
+a[-5:]
+```
+
+a="Hello, 你好嗎？"
+len(a) # 字（串）的長度包含空格
+b=["Hello"]
+len(b) # list元素個數
+```{python}
+x="Hello"+"World"
+```
+
+```{python}
+x=[1,2,3]
+y=[1,2,3]
+z=[1,2]
+x==y
+x==z
+x!=z
+```
+x==y True
+x==z False
+```{python}
+x=[1,2,3]
+y=[1,2,3]
+x is y
+x is not y
+```
+用is去比對是不是同個倉庫
+```{python}
+5 in [1,5,3]
+[5] in [1],[5],[3]
+```
+```{python}
+x=3
+x<5 and x<10
+x<5 or x>4
+not(x<5 or x>4)
+```
+
+使用list comprehension產生一個listG個別元素是否>listF個別元素的list
+```{python}
+listF=[2,5,10,11,-1,7]
+```
+```{python}
+listG=[4,7,-2,10,11,15]
+```
+
+```{python}
+[listG[i]>listF[i] for i in [0,1,2,3,4,5]]
+```
+
+
+```{python}
+float("12")
+int("12") 
+str(12)
+bool("True")
+```
+
+float("12") # 字串12轉數字
+int("12") # 字串12轉整數
+str(12) # 數字12轉字串
+bool("True") # 轉邏輯
+```{python}
+listC=[2,3,4]
+str(listC)
+```
+
+
+```{python}
+[str(listC[i]) for i in [0,1,2]]
+```
+```{python}
+list2iter=["a",2,"c"]
+[i for i in [0,1,2]]
+[i for i in range(0,3)] 
+[i for i in range(0,len(list2iter))] 
+
+[type(list2iter[i]) is str for i in range(0,3)]
+```
+
+```{python}
+x="i am steven."
+x.capitalize()
+x.center(20) 
+x.upper() 
+x.lower()
+x.find("steven") 
+```
+x="i am steven."
+x.capitalize()
+x.center(20)
+x.upper() 
+x.lower()
+x.find("steven")
+```{python}
+x1,x2,x3=x.split()
+print(x1)
+print(x2)
+print(x3)
+
+y="Wang,45age,A"
+y1,y2,y3=y.split(",") 
+print(y1); print(y2); print(y3)
+
+print(y.split(",",1)) 
+print(y.split(",",2)) 
+```
+x1,x2,x3=x.split() # 以空格切
+print(x1)
+print(x2)
+print(x3)
+
+y="王小明,45歲,血型:A"
+y1,y2,y3=y.split(",") # 以,切
+print(y1); print(y2); print(y3)
+
+print(y.split(",",1)) # 只切（前面數來）第一刀
+print(y.split(",",2)) # 只切（前面數來）二刀
+```{python}
+"{0}s{1}score is{2}".format("A", "ECON", 50)  
+"{}s{}score is{}".format("A", "ECON", 50) 
+"{1}s{0}score is{2}".format("A","ECON", 50)   
+
+
+"{name}s{subject}score is{grade}".format(
+  name="A",grade=50,subject="ECON") 
+```
+```{python}
+x="China"
+xlist=list(x)
+xlist.reverse()
+print(xlist)
+"".join(xlist)
+```
+
