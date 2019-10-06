@@ -164,7 +164,12 @@ time1
 [{'title': '原音舞絢', 'time': '2019/09/29 14:30:00', 'location': '台北市中山南路21號，藍白建築1樓'}, {'title': '國立彰化生活美學館108年「舞藝人生-土風舞藝術」推廣計畫-第四場', 'time': '2019/11/03 08:30:00', 'location': '彰化縣彰化市卦山路18號'}]
 
 ```{python ans35}
-# danceInfoList
+danceInfoList = {
+'title': [danceInfo[i]['title'] for i in range(0,92)],
+'time' : [danceInfo[i]['showInfo'][0]['time'] for i in range(0,92)],
+'location' : [danceInfo[i]['showInfo'][0]['location'] for i in range(0,92)
+}
+danceInfoList
 ```
 
 ### 3.6
