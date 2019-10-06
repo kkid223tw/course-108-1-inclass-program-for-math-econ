@@ -12,10 +12,12 @@ use_python("C:/Users/kaiwun/ANACON~1/envs/myEnvironment",
            required = T)
 use_condaenv("myEnvironment", required = T)
 ```
+
 ```{r}
 conda_install("myEnvironment", 
               c("numpy","pandas"))
 ```
+
 ```{r}
 conda_install("m-team", 
               c("google-api-python-client"),
